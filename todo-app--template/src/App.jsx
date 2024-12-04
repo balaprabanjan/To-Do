@@ -1,27 +1,17 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Guide from './components/Guide'
-import Gallery from './components/Gallery'
-import Testimonials from './components/Testimonials'
-import Contact from './components/Contact'
+import Home from "./pages/Home";
+import Todo from "./pages/Todo";
+
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
-    <Navbar/>
-      <div>
-        <Hero/>
-        <About/>
-        <Guide/>
-        <Gallery/>
-        <Testimonials/>
-        <Contact/>
-      </div>
-    </>
-      
-  )
-}
+    <main>
+      <Routes>
+        <Route path="/" element={<Home />} index />
+        <Route path="/todo" element={<Todo />} />
+      </Routes>
+    </main>
+  );
+};
 
-export default App
+export default App;
